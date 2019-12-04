@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+    <br />
+    <br />
+    <br />
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <form>
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <input type="text" class="form-control" id="username" placeholder="username">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <input type="password" class="form-control" id="password"
+                                            placeholder="password">
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-primary mb-2" id="login-btn">Login</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="card border-secondary mb-12">
+                                <div class="card-header">Brian (purchased)</div>
+                                <div class="card-body text-secondary">
+                                    <ul id="purchased-gifts">
+                                        <li class='item'>cotton candy machine</li>
+                                        <li>pack of bubble gum</li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card border-secondary mb-12">
+                    <div class="card-header" id="user-name"></div>
+                    <div class="card-body text-secondary">
+                        <div class="list-group" id="list-section">
+                        </div>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addItemModal">
+                            ADD ITEM
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="addItemModal" tabindex="-1" role="dialog" aria-labelledby="addItemModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="addItemModalLabel">New Item</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <input type="text" class="form-control" id="item" placeholder="Item">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <input type="text" class="form-control" id="description"
+                                            placeholder="Description">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleFormControlSelect1">User Select</label>
+                                    <select class="form-control" id="userID">
+                                        <option value="1">Chris</option>
+                                        <option value="2">Brian</option>
+                                        <option value="3">Justin</option>
+                                        <option value="4">Oscar</option>
+                                    </select>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="submit" id="add-btn" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ************ MODAL FOR VIEWING ITEM DETAILS ****************-->
+
+            <!-- Modal -->
+            <div class="modal fade" id="itemDetailModal" tabindex="-1" role="dialog"
+                aria-labelledby="itemDetailModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="itemDetailModalLabel">Item Details</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <h1 id="item-detail-header"></h1>
+                            <p id="item-detail-description"></p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" id="pending-btn" class="btn btn-primary">Pending</button>
+                            <button type="button" id="purchase-btn" class="btn btn-success">Purchase</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <ul id="list-group">
+                    <li class="list-group-item users" id="1" name="Chris">Chris</li>
+                    <li class="list-group-item users" id="2" name="Brian">Brian</li>
+                    <li class="list-group-item users" id="3" name="Justin">Justin</li>
+                    <li class="list-group-item users" id="4" name="Oscar">Oscar</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+<script src="./js/add.js"></script>
+<script src="./js/item.js"></script>
+
+
+</html>

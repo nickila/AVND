@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS wishlist;
+CREATE DATABASE wishlist;

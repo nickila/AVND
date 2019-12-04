@@ -1,0 +1,15 @@
+.card-header {
+    font-size: 35px;
+}
+
+.list-group {
+    font-size: 35px;
+}
+
+li:hover {
+    cursor: pointer;
+}
+
+.item:hover {
+    cursor: pointer;
+}
